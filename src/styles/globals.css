@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: 240 10% 7%;
+  --foreground: 200 22% 92%;
+  --card: 240 10% 10%;
+  --card-foreground: 200 20% 95%;
+  --popover: 240 10% 7%;
+  --popover-foreground: 200 22% 92%;
+  --primary: 190 100% 66%;
+  --primary-foreground: 210 100% 98%;
+  --secondary: 255 70% 70%;
+  --secondary-foreground: 210 100% 98%;
+  --muted: 240 10% 18%;
+  --muted-foreground: 210 12% 72%;
+  --accent: 32 85% 60%;
+  --accent-foreground: 210 100% 98%;
+  --destructive: 0 90% 58%;
+  --destructive-foreground: 210 100% 98%;
+  --border: 240 10% 22%;
+  --input: 240 10% 18%;
+  --ring: 190 100% 66%;
+  --radius: 1.25rem;
+}
+
+[data-theme="stone"] {
+  --background: 222 16% 10%;
+  --foreground: 210 20% 90%;
+  --card: 222 18% 14%;
+  --card-foreground: 200 24% 96%;
+  --accent: 35 83% 62%;
+  --accent-foreground: 210 100% 96%;
+  --ring: 35 83% 62%;
+  --border: 220 15% 28%;
+  --muted: 220 15% 18%;
+  --muted-foreground: 220 12% 72%;
+  --primary: 200 16% 88%;
+  --primary-foreground: 230 35% 8%;
+  --secondary: 219 12% 22%;
+  --secondary-foreground: 200 24% 96%;
+}
+
+[data-theme="digital"] {
+  --background: 235 22% 7%;
+  --foreground: 197 80% 95%;
+  --card: 235 22% 12%;
+  --card-foreground: 197 80% 95%;
+  --accent: 173 95% 55%;
+  --accent-foreground: 192 86% 98%;
+  --ring: 173 95% 55%;
+  --border: 240 34% 28%;
+  --muted: 240 34% 18%;
+  --muted-foreground: 195 48% 78%;
+  --primary: 192 95% 68%;
+  --primary-foreground: 240 26% 12%;
+  --secondary: 270 80% 70%;
+  --secondary-foreground: 194 95% 90%;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-feature-settings: "liga" on, "calt" on;
+  background-image: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 60%);
+}
+
+a {
+  @apply text-primary underline-offset-4 transition-colors hover:text-primary/80;
+}
+
+.rune-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.theme-transition {
+  transition: background-color 200ms ease, color 200ms ease;
+}
