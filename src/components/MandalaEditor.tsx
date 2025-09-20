@@ -74,7 +74,7 @@ export function MandalaEditor() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [frame, setFrame] = useState<FrameMode>("none")
   const [broken, setBroken] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const canvasRef = useRef<HTMLDivElement>(null)
   const [draggingId, setDraggingId] = useState<string | null>(null)
 
   useEffect(() => {
@@ -112,8 +112,8 @@ export function MandalaEditor() {
   }
 
   const handlePointerMove = (event: PointerEvent) => {
-    if (!draggingId || !containerRef.current) return
-    const bounds = containerRef.current.getBoundingClientRect()
+    if (!draggingId || !canvasRef.current) return
+    const bounds = canvasRef.current.getBoundingClientRect()
     const x = event.clientX - bounds.left
     const y = event.clientY - bounds.top
     const center = CANVAS_SIZE / 2
@@ -229,7 +229,6 @@ export function MandalaEditor() {
           </p>
         </BinderPanel>
         <div
-          ref={containerRef}
           className="relative mx-auto w-full max-w-[640px] overflow-hidden rounded-[2.5rem] border border-border/60 bg-stone-soft/30 p-6"
           style={{ height: CANVAS_SIZE + 48 }}
         >
@@ -287,7 +286,9 @@ export function MandalaEditor() {
               </svg>
             )}
           </div>
-          <div className="absolute left-6 top-6"
+          <div
+            ref={canvasRef}
+            className="absolute left-6 top-6"
             style={{ width: CANVAS_SIZE, height: CANVAS_SIZE }}
           >
             <AnimatePresence>
