@@ -8,12 +8,14 @@ import AlphabetPage from "@/pages/Alphabet"
 import BuilderPage from "@/pages/Builder"
 import HomePage from "@/pages/Home"
 import MandalaPage from "@/pages/Mandala"
+import VirmanaPage from "@/pages/Virmana"
 
 const links = [
   { to: "/", label: "Home" },
   { to: "/alphabet", label: "Alphabet" },
   { to: "/builder", label: "Script Builder" },
   { to: "/mandala", label: "Mandala" },
+  { to: "/virmana", label: "Virmana" },
 ]
 
 export default function App() {
@@ -65,6 +67,7 @@ export default function App() {
           <Route path="/alphabet" element={<AlphabetPage />} />
           <Route path="/builder" element={<BuilderPage />} />
           <Route path="/mandala" element={<MandalaPage />} />
+          <Route path="/virmana" element={<VirmanaPage />} />
         </Routes>
       </main>
       <Separator className="mt-12" />

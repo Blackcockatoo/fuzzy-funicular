@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="space-y-4">
           <h1 className="text-4xl font-semibold">New Runes Glyph Laboratory</h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Explore the full 29-rune alphabet, compose script lines with live gematria sums, and assemble radial sigils that obey the chisel law. Everything renders to lawful SVG that you can export instantly.
+            Explore the full 29-rune alphabet, compose script lines with live gematria sums, and assemble radial sigils that obey the chisel law. The Virmana forge now spans Flower of Life petals, Metatron cubes, Nav Durga grids, Navagraha magic squares, and rangoli mosaics—everything renders to lawful SVG that you can export instantly.
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-3">
@@ -32,6 +32,11 @@ export default function HomePage() {
           <Button asChild variant="ghost">
             <Link to="/mandala" className="flex items-center gap-2">
               Craft a mandala <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+          <Button asChild variant="ghost">
+            <Link to="/virmana" className="flex items-center gap-2">
+              Forge a virmana <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
         </div>
